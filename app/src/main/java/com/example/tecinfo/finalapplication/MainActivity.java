@@ -1,5 +1,6 @@
 package com.example.tecinfo.finalapplication;
 
+import android.app.AppOpsManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,6 +17,21 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id =item.getItemId();
+
+        if (id == R.id.action_settings){
+            Toast.makeText(getApplicationContext(),
+                    "minhas configurações", Toast.LENGTH_SHORT).show();
+            return true;
+
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
